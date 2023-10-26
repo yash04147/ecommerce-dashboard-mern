@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
 const port = 3001;
+const cors = require("cors");
 require("./Database/Connection");
 const User = require("./Database/Userschema");
 const Product = require("./Database/Productschema");
 app.use(express.json());
+app.use(cors());
 
 //home route
 app.get("/", (req, res) => {
